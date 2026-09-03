@@ -177,8 +177,6 @@ li.mainitem:hover > a {
     border: 1px solid #ddd;
     border-radius: 8px;
     text-align: center;
-    overflow-wrap: anywhere;
-    word-break: normal;
 }
 
 .h1contact {
@@ -302,12 +300,6 @@ li.mainitem:hover > a {
         max-width: 100%;
         width: 100%;
         height: auto;
-    }
-
-    .email {
-        display: block;
-        overflow-wrap: anywhere;
-        margin-top: 5px;
     }
 
     .contact-section p {
