@@ -1,15 +1,26 @@
-.container {
-	max-width: 1020px;
-	margin: 0 auto;
-	padding: 20px;
-	background-color: #dcdcdc;
+* {
+    box-sizing: border-box;
+}
+html {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
+    margin: 0;
+    width: 100%;
     font-family: "Lilita", sans-serif;
     font-weight: 700;
     font-style: normal;
-	background-color: #0042aa;
+    background-color: #0042aa;
+}
+
+.container {
+    width: 100%;
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #dcdcdc;
 }
 
 .cimer {
@@ -33,13 +44,14 @@ ul.mainmenu {
     padding: 0;
     list-style-type: none;
     background-color: #1d8fe5;
-    overflow: hidden;
+    overflow: visible;
     border-radius: 1rem;
     display: flex;
+    flex-wrap: wrap;
 }
 
 li.mainitem {
-    display: inline-block;
+    display: block;
 }
 
 li.mainitem > a {
@@ -49,12 +61,12 @@ li.mainitem > a {
     display: block;
     color: white;
     font-size: 20px;
-	transition: background-color 0.4s, color 0.4s;
+    transition: background-color 0.4s, color 0.4s;
 }
 
 li.mainitem:hover > a {
     background-color: #0042aa;
-	color: #1d8fe5;
+    color: #1d8fe5;
 }
 
 .dropdown-content {
@@ -89,29 +101,6 @@ li.mainitem:hover > a {
 .dropdown-content a{
 	text-align: center;
 	color: white;
-}
-
-@media (max-width: 768px) {
-    ul.mainmenu {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    li.mainitem > a {
-        font-size: 18px;
-        padding: 15px;
-    }
-
-    .dropdown-content {
-        position: relative;
-        width: 100%;
-        box-shadow: none;
-    }
-
-    .dropdown-content a {
-        font-size: 18px;
-        padding: 10px;
-    }
 }
 
 /* Hírek */
@@ -181,15 +170,15 @@ li.mainitem:hover > a {
 /* Contact */
 
 .contact-section {
+    width: 100%;
     margin: auto;
     padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
     text-align: center;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
 }
 
 .h1contact {
@@ -203,6 +192,7 @@ li.mainitem:hover > a {
     font-size: 24px;
     color: #333;
     margin-bottom: 15px;
+    max-width: 100%;
 }
 
 /* Footer */
@@ -221,3 +211,117 @@ li.mainitem:hover > a {
 .footer p {
     margin: 5px 0;
 }
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 10px;
+    }
+
+    ul.mainmenu {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    li.mainitem {
+        width: 100%;
+    }
+
+    li.mainitem > a {
+        width: 100%;
+        font-size: 18px;
+        padding: 14px 10px;
+    }
+
+    .dropdown-content {
+        position: relative;
+        width: 100%;
+        min-width: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .dropdown-content a {
+        font-size: 17px;
+        padding: 10px;
+    }
+
+    .cimer {
+        max-width: 85%;
+        width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .h1sport,
+    .h1contact {
+        font-size: 36px;
+        line-height: 1.1;
+        overflow-wrap: anywhere;
+    }
+
+    .sport-section,
+    .contact-section {
+        padding: 15px;
+    }
+
+    .sport-description p,
+    .contact-section p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .news-section {
+        display: block;
+        padding: 15px;
+    }
+
+    .news-text h2 {
+        font-size: 21px;
+        line-height: 1.3;
+    }
+
+    .news-text p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .news-image {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .sport-image {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+    .email {
+        display: block;
+        overflow-wrap: anywhere;
+        margin-top: 5px;
+    }
+
+    .contact-section p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .footer {
+        padding: 15px 10px;
+    }
+
+    .footer p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
